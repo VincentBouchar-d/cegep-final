@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:orientation="horizontal"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="50px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="135px"
+            android:text="Nom :"/>
+        <TextView
+            android:layout_width="355px"
+            android:layout_height="match_parent"
+            android:text="-"
+            android:id="@+id/lblNomCegep"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:orientation="horizontal "
+        android:layout_marginLeft="80px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="90px"
+            android:text="Adresse :"/>
+        <TextView
+            android:layout_width="355px"
+            android:layout_height="match_parent"
+            android:text="-"
+            android:id="@+id/lblAdresseCegep"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:orientation="horizontal "
+        android:layout_marginLeft="80px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="140px"
+            android:text="Ville :"/>
+        <TextView
+            android:layout_width="355px"
+            android:layout_height="match_parent"
+            android:text="-"
+            android:id="@+id/lblVilleCegep"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:orientation="horizontal "
+        android:layout_marginLeft="80px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="86px"
+            android:text="Province :"/>
+        <TextView
+            android:layout_width="355px"
+            android:layout_height="match_parent"
+            android:text="-"
+            android:id="@+id/lblProvinceCegep"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:orientation="horizontal "
+        android:layout_marginLeft="80px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Code Postal :"
+            android:layout_marginRight="45px"/>
+        <TextView
+            android:layout_width="355px"
+            android:layout_height="match_parent"
+            android:id="@+id/lblCodePostalCegep"
+            android:text="-"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:orientation="horizontal "
+        android:layout_marginLeft="80px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="66px"
+            android:text="Telephone :"/>
+        <TextView
+            android:layout_width="355px"
+            android:layout_height="match_parent"
+            android:id="@+id/lblTelephoneCegep"
+            android:text="-"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:orientation="horizontal "
+        android:layout_marginLeft="80px"
+        android:layout_marginBottom="30px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Courriel :"
+            android:layout_marginRight="100px"/>
+        <TextView
+            android:layout_width="355px"
+            android:layout_height="match_parent"
+            android:id="@+id/lblCourrielCegep"
+            android:text="-"/>
+    </LinearLayout>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Liste de(s) départment(s) :"/>
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listViewAfficher"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:orientation="horizontal"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="50px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="110px"
+            android:text="Nom :"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/edtNomDepartement"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:orientation="horizontal"
+        android:layout_marginLeft="80px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="70px"
+            android:text="Numéro :"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="25.5dp"
+            android:id="@+id/edtNumeroDepartement"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:orientation="horizontal"
+        android:layout_marginLeft="80px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="30px"
+            android:text="Description :"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/edtDescriptionDepartement"/>
+    </LinearLayout>
+    <Button
+        android:text="Ajouter Département"
+        android:layout_marginTop="30px"
+        android:layout_width="400px"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/btnAjouterDepartement" />
+</LinearLayout>
+

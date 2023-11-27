@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Liste de(s) Cégep(s) :"/>
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="500px"
+        android:id="@+id/listViewCegep"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100px"
+        android:orientation="horizontal"
+        android:layout_marginLeft="80px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="135px"
+            android:text="Nom :"/>
+        <EditText
+            android:layout_width="355px"
+            android:layout_height="100px"
+            android:id="@+id/edtNomCegep"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100px"
+        android:orientation="horizontal "
+        android:layout_marginLeft="80px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="90px"
+            android:text="Adresse :"/>
+        <EditText
+            android:layout_width="355px"
+            android:layout_height="100px"
+            android:id="@+id/edtAdresseCegep"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100px"
+        android:orientation="horizontal "
+        android:layout_marginLeft="80px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="140px"
+            android:text="Ville :"/>
+        <EditText
+            android:layout_width="355px"
+            android:layout_height="match_parent"
+            android:id="@+id/edtVilleCegep"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100px"
+        android:orientation="horizontal "
+        android:layout_marginLeft="80px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="86px"
+            android:text="Province :"/>
+        <EditText
+            android:layout_width="355px"
+            android:layout_height="wrap_content"
+            android:id="@+id/edtProvinceCegep"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100px"
+        android:orientation="horizontal "
+        android:layout_marginLeft="80px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Code Postal :"
+            android:layout_marginRight="45px"/>
+        <EditText
+            android:layout_width="355px"
+            android:layout_height="wrap_content"
+            android:id="@+id/edtCodePostalCegep"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100px"
+        android:orientation="horizontal "
+        android:layout_marginLeft="80px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="66px"
+            android:text="Telephone :"/>
+        <EditText
+            android:layout_width="355px"
+            android:layout_height="wrap_content"
+            android:id="@+id/edtTelephoneCegep"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100px"
+        android:orientation="horizontal "
+        android:layout_marginLeft="80px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Courriel :"
+            android:layout_marginRight="100px"/>
+        <EditText
+            android:layout_width="355px"
+            android:layout_height="wrap_content"
+            android:id="@+id/edtCourrielCegep"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="100px"
+        android:text="AJOUTER"
+        android:id="@+id/btnAjouterCegep"
+        android:layout_gravity="center_horizontal"/>
+</LinearLayout>
+

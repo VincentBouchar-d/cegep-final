@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:orientation="horizontal"
+        android:layout_marginLeft="130px"
+        android:layout_marginTop="130px"
+        android:layout_marginBottom="20px"
+        android:layout_gravity="left">
+                <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:layout_marginRight="133px"
+                       android:text="Nom :"/>
+                <TextView
+                    android:layout_width="305px"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lblNomCegep"/>
+            </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100px"
+        android:orientation="horizontal "
+        android:layout_marginLeft="130px"
+        android:layout_marginBottom="20px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="90px"
+            android:text="Adresse :"/>
+        <EditText
+            android:layout_width="305px"
+            android:layout_height="match_parent"
+            android:id="@+id/edtAdresseCegep"/>
+    </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="100px"
+                android:orientation="horizontal "
+                android:layout_marginLeft="130px"
+                android:layout_marginBottom="20px"
+                android:layout_gravity="left">
+                <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:layout_marginRight="140px"
+                       android:text="Ville :"/>
+                <EditText
+                    android:layout_width="305px"
+                    android:layout_height="match_parent"
+                    android:id="@+id/edtVilleCegep"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="100px"
+                android:orientation="horizontal "
+                android:layout_marginLeft="130px"
+                android:layout_marginBottom="20px"
+                android:layout_gravity="left">
+                <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:layout_marginRight="86px"
+                       android:text="Province :"/>
+                <EditText
+                    android:layout_width="305px"
+                    android:layout_height="match_parent"
+                    android:id="@+id/edtProvinceCegep"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="100px"
+                android:orientation="horizontal "
+                android:layout_marginLeft="130px"
+                android:layout_marginBottom="20px"
+                android:layout_gravity="left">
+                <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:text="Code Postal :"
+                 android:layout_marginRight="45px"/>
+                <EditText
+                    android:layout_width="305px"
+                    android:layout_height="match_parent"
+                    android:id="@+id/edtCodePostalCegep"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="100px"
+                android:orientation="horizontal "
+                android:layout_marginLeft="130px"
+                android:layout_marginBottom="20px"
+                android:layout_gravity="left">
+                <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:layout_marginRight="66px"
+                       android:text="Telephone :"/>
+                <EditText
+                    android:layout_width="305px"
+                    android:layout_height="match_parent"
+                    android:id="@+id/edtTelephoneCegep"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="100px"
+                android:orientation="horizontal "
+                android:layout_marginLeft="130px"
+                android:layout_marginBottom="20px"
+                android:layout_gravity="left">
+                <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:text="Courriel :"
+                       android:layout_marginRight="100px"/>
+                <EditText
+                    android:layout_width="305px"
+                    android:layout_height="match_parent"
+                    android:id="@+id/edtCourrielCegep"/>
+            </LinearLayout>
+    
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="80px"
+                android:text="MODIFIER"
+                android:id="@+id/btnModifierCegep"
+                android:layout_marginLeft="50px"
+                android:backgroundTint="@android:color/darker_gray"
+                android:textColor="#000000"
+                android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+
