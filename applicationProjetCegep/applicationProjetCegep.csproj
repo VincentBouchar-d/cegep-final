@@ -66,8 +66,11 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapteurs\ListeEnseignantAdapteur.cs" />
     <Compile Include="Adapteurs\ListeDepartementAdapteur.cs" />
     <Compile Include="Adapteurs\ListeCegepAdapteur.cs" />
+    <Compile Include="AfficherDepartementActivity.cs" />
+    <Compile Include="CreerEnseignantActivity.cs" />
     <Compile Include="ModifierCegepActivity.cs" />
     <Compile Include="AfficherCegepActivity.cs" />
     <Compile Include="Controleurs\CegepControleur.cs" />
@@ -163,6 +166,36 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\listeDepartementItems.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\AfficherDepartement.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\menu_afficherDepartement.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\listeEnseignantItems.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\AjouterEnseignant.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\menu_creerEnseignant.xml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>

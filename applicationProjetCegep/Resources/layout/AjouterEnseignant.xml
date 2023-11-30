@@ -6,29 +6,69 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Liste de(s) enseignant(s) :"/>
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="300px"
+        android:id="@+id/listViewEnseignant"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="50px"
+        android:layout_height="100px"
         android:orientation="horizontal"
         android:layout_marginLeft="80px"
-        android:layout_marginTop="50px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="135px"
+            android:text="No :"/>
+        <EditText
+            android:layout_width="355px"
+            android:layout_height="100px"
+            android:id="@+id/edtNoEnseignant"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100px"
+        android:orientation="horizontal"
+        android:layout_marginLeft="80px"
         android:layout_gravity="left">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginRight="135px"
             android:text="Nom :"/>
-        <TextView
+        <EditText
             android:layout_width="355px"
-            android:layout_height="match_parent"
-            android:text="-"
-            android:id="@+id/lblNomCegep"/>
+            android:layout_height="100px"
+            android:id="@+id/edtNomEnseignant"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="50px"
+        android:layout_height="100px"
+        android:orientation="horizontal"
+        android:layout_marginLeft="80px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="135px"
+            android:text="Prénom :"/>
+        <EditText
+            android:layout_width="355px"
+            android:layout_height="100px"
+            android:id="@+id/edtPrenomEnseignant"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100px"
         android:orientation="horizontal "
         android:layout_marginLeft="80px"
         android:layout_gravity="left">
@@ -37,16 +77,15 @@
             android:layout_height="match_parent"
             android:layout_marginRight="90px"
             android:text="Adresse :"/>
-        <TextView
+        <EditText
             android:layout_width="355px"
-            android:layout_height="match_parent"
-            android:text="-"
-            android:id="@+id/lblAdresseCegep"/>
+            android:layout_height="100px"
+            android:id="@+id/edtAdresseEnseignant"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="50px"
+        android:layout_height="100px"
         android:orientation="horizontal "
         android:layout_marginLeft="80px"
         android:layout_gravity="left">
@@ -55,16 +94,15 @@
             android:layout_height="match_parent"
             android:layout_marginRight="140px"
             android:text="Ville :"/>
-        <TextView
+        <EditText
             android:layout_width="355px"
             android:layout_height="match_parent"
-            android:text="-"
-            android:id="@+id/lblVilleCegep"/>
+            android:id="@+id/edtVilleEnseignant"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="50px"
+        android:layout_height="100px"
         android:orientation="horizontal "
         android:layout_marginLeft="80px"
         android:layout_gravity="left">
@@ -73,16 +111,15 @@
             android:layout_height="match_parent"
             android:layout_marginRight="86px"
             android:text="Province :"/>
-        <TextView
+        <EditText
             android:layout_width="355px"
-            android:layout_height="match_parent"
-            android:text="-"
-            android:id="@+id/lblProvinceCegep"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/edtProvinceEnseignant"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="50px"
+        android:layout_height="100px"
         android:orientation="horizontal "
         android:layout_marginLeft="80px"
         android:layout_gravity="left">
@@ -91,16 +128,15 @@
             android:layout_height="match_parent"
             android:text="Code Postal :"
             android:layout_marginRight="45px"/>
-        <TextView
+        <EditText
             android:layout_width="355px"
-            android:layout_height="match_parent"
-            android:id="@+id/lblCodePostalCegep"
-            android:text="-"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/edtCodePostalEnseignant"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="50px"
+        android:layout_height="100px"
         android:orientation="horizontal "
         android:layout_marginLeft="80px"
         android:layout_gravity="left">
@@ -109,98 +145,34 @@
             android:layout_height="match_parent"
             android:layout_marginRight="66px"
             android:text="Telephone :"/>
-        <TextView
+        <EditText
             android:layout_width="355px"
-            android:layout_height="match_parent"
-            android:id="@+id/lblTelephoneCegep"
-            android:text="-"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/edtTelephoneEnseignant"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="50px"
+        android:layout_height="100px"
         android:orientation="horizontal "
         android:layout_marginLeft="80px"
-        android:layout_marginBottom="30px"
         android:layout_gravity="left">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Courriel :"
             android:layout_marginRight="100px"/>
-        <TextView
+        <EditText
             android:layout_width="355px"
-            android:layout_height="match_parent"
-            android:id="@+id/lblCourrielCegep"
-            android:text="-"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/edtCourrielEnseignant"/>
     </LinearLayout>
 
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Liste de(s) départment(s) :"/>
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/listViewAfficher"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="100px"
-        android:orientation="horizontal"
-        android:layout_marginLeft="80px"
-        android:layout_marginTop="50px"
-        android:layout_gravity="left">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginRight="110px"
-            android:text="Nom :"/>
-        <EditText
-            android:layout_width="163.4dp"
-            android:layout_height="100px"
-            android:id="@+id/edtNomDepartement"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="100px"
-        android:orientation="horizontal"
-        android:layout_marginLeft="80px"
-        android:layout_gravity="left">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginRight="70px"
-            android:text="Numéro :"/>
-        <EditText
-            android:layout_width="158.5dp"
-            android:layout_height="100px"
-            android:id="@+id/edtNumeroDepartement"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="100px"
-        android:orientation="horizontal"
-        android:layout_marginLeft="80px"
-        android:layout_gravity="left">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginRight="30px"
-            android:text="Description :"/>
-        <EditText
-            android:layout_width="400px"
-            android:layout_height="match_parent"
-            android:id="@+id/edtDescriptionDepartement"/>
-    </LinearLayout>
     <Button
-        android:text="Ajouter Département"
-        android:layout_marginTop="30px"
-        android:layout_width="400px"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:id="@+id/btnAjouterDepartement" />
+        android:layout_width="wrap_content"
+        android:layout_height="100px"
+        android:text="AJOUTER"
+        android:id="@+id/btnAjouterEnseignant"
+        android:layout_gravity="center_horizontal"/>
 </LinearLayout>
 

@@ -15,6 +15,7 @@ using AlertDialog = AndroidX.AppCompat.App.AlertDialog;
 using applicationProjetCegep.Adapteurs;
 using ProjetCegep.Controleurs;
 using ProjetCegep.DTOs;
+using ProjetCegep.Utils;
 
 namespace applicationProjetCegep
 {
@@ -69,12 +70,41 @@ namespace applicationProjetCegep
             lblCourrielCegep = FindViewById<TextView>(Resource.Id.lblCourrielCegep);
 
             
-            edtDescriptionDepartement = FindViewById<EditText>(Resource.Id.edtNomCegep);
+            edtNomDepartement = FindViewById<EditText>(Resource.Id.edtNomDepartement);
             edtNumeroDepartement = FindViewById<EditText>(Resource.Id.edtNumeroDepartement);
             edtDescriptionDepartement= FindViewById<EditText>(Resource.Id.edtDescriptionDepartement);
+            btnAjouterDepartement = FindViewById<Button>(Resource.Id.btnAjouterDepartement);
 
 
-            //lblNomCegep = CegepControleur.Instance.ObtenirCegep(Intent.GetStringExtra("paramNomCegep").
+            btnAjouterDepartement.Click += delegate
+            {
+                if ((edtDescriptionDepartement.Text.Length > 0) && (edtNumeroDepartement.Text.Length > 0) && (edtNomDepartement.Text.Length > 0))
+                {
+                    try
+                    {
+                        string nom = edtNomDepartement.Text;
+                        CegepControleur.Instance.AjouterDepartement(Intent.GetStringExtra("paramNomCegep"),new DepartementDTO(edtNumeroDepartement.Text, edtNomDepartement.Text, edtDescriptionDepartement.Text));
+                        RafraichirDonnees();
+                        DialoguesUtils.AfficherToasts(this, nom + " ajouté !!!");
+                    }
+                    catch (Exception ex)
+                    {
+                        DialoguesUtils.AfficherMessageOK(this, "Erreur", ex.Message);
+                    }
+                }
+                else
+                    DialoguesUtils.AfficherMessageOK(this, "Erreur", "Veuillez remplir tous les champs...");
+            };
+
+            listView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) =>
+            {
+                Intent activiteDepartementDetails = new Intent(this, typeof(AfficherDepartementActivity));
+                //On initialise les paramètres avant de lancer la nouvelle activité.
+                activiteDepartementDetails.PutExtra("paramNomCegep", Intent.GetStringExtra("paramNomCegep"));
+                activiteDepartementDetails.PutExtra("paramNomDepartement", listeDepartement[e.Position].Nom);
+                //On démarre la nouvelle activité.
+                StartActivity(activiteDepartementDetails);
+            };
         }
 
         protected override void OnResume()
