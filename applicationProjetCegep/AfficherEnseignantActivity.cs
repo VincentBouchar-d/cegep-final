@@ -119,7 +119,23 @@ namespace applicationProjetCegep
         {
             switch (item.ItemId)
             {
-                
+                case Resource.Id.menuSupprimer:
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.SetPositiveButton("NON", (sender, args) => { Finish(); });
+                    builder.SetNegativeButton("OUI", (sender, args) => {
+
+                        CegepControleur.Instance.SupprimerEnseignant(Intent.GetStringExtra("paramNomCegep"), Intent.GetStringExtra("paramNomDepartement"), Intent.GetIntExtra("paramNoEmploye", 0));
+                        Finish();
+                    });
+                    AlertDialog dialog = builder.Create();
+                    dialog.SetTitle("*** ATTENTION  ***");
+                    dialog.SetMessage("Voulez-vous VRAIMENT supprimer cet enseignant ? Cette action est irréversible.");
+                    dialog.Window.SetGravity(GravityFlags.Center);
+                    dialog.Show();
+                    break;
+                case Resource.Id.menuRetour:
+                    Finish();
+                    break;
                 case Resource.Id.menuQuitter:
                     FinishAffinity();
                     break;
