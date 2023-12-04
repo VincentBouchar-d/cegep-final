@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:orientation="horizontal"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="50px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="135px"
+            android:text="No :"/>
+        <TextView
+            android:layout_width="355px"
+            android:layout_height="match_parent"
+            android:text="-"
+            android:id="@+id/lblNoEnseignant"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:orientation="horizontal"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="50px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="135px"
+            android:text="Nom :"/>
+        <TextView
+            android:layout_width="355px"
+            android:layout_height="match_parent"
+            android:text="-"
+            android:id="@+id/lblNomEnseignant"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:orientation="horizontal"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="50px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="135px"
+            android:text="Prénom :"/>
+        <TextView
+            android:layout_width="355px"
+            android:layout_height="match_parent"
+            android:text="-"
+            android:id="@+id/lblPrenomEnseignant"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:orientation="horizontal"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="50px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="135px"
+            android:text="Adresse :"/>
+        <TextView
+            android:layout_width="355px"
+            android:layout_height="match_parent"
+            android:text="-"
+            android:id="@+id/lblAdresseEnseignant"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:orientation="horizontal"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="50px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="135px"
+            android:text="Ville :"/>
+        <TextView
+            android:layout_width="355px"
+            android:layout_height="match_parent"
+            android:text="-"
+            android:id="@+id/lblVilleEnseignant"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:orientation="horizontal"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="50px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="135px"
+            android:text="Province :"/>
+        <TextView
+            android:layout_width="355px"
+            android:layout_height="match_parent"
+            android:text="-"
+            android:id="@+id/lblProvinceEnseignant"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:orientation="horizontal"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="50px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="135px"
+            android:text="Code postal :"/>
+        <TextView
+            android:layout_width="355px"
+            android:layout_height="match_parent"
+            android:text="-"
+            android:id="@+id/lblCodePostalEnseignant"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:orientation="horizontal"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="50px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="135px"
+            android:text="Téléphone :"/>
+        <TextView
+            android:layout_width="355px"
+            android:layout_height="match_parent"
+            android:text="-"
+            android:id="@+id/lblTelephoneEnseignant"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:orientation="horizontal"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="50px"
+        android:layout_gravity="left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="135px"
+            android:text="Courriel :"/>
+        <TextView
+            android:layout_width="355px"
+            android:layout_height="match_parent"
+            android:text="-"
+            android:id="@+id/lblCourrielEnseignant"/>
+    </LinearLayout>
+
+
+    
+    
+
+</LinearLayout>
+
