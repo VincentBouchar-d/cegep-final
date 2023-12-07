@@ -83,7 +83,7 @@ namespace ProjetCegep.DAOs
             }
             catch (Exception ex)
             {
-                throw new Exception("Erreur lors de l'obtention d'un id d'un Cégep par son nom...", ex);
+                    throw new Exception("Erreur lors de l'obtention d'un id d'un Cégep par son nom...", ex);
             }
             finally
             {

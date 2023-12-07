@@ -72,6 +72,7 @@
     <Compile Include="AfficherEnseignantActivity.cs" />
     <Compile Include="AfficherDepartementActivity.cs" />
     <Compile Include="CreerEnseignantActivity.cs" />
+    <Compile Include="ModifierEnseignantActivity.cs" />
     <Compile Include="ModifierCegepActivity.cs" />
     <Compile Include="AfficherCegepActivity.cs" />
     <Compile Include="Controleurs\CegepControleur.cs" />
@@ -209,6 +210,18 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\menu\menu_afficherEnseignant.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ModifierEnseignant.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\menu_modifierEnseignant.xml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>

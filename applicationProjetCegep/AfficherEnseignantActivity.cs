@@ -133,6 +133,13 @@ namespace applicationProjetCegep
                     dialog.Window.SetGravity(GravityFlags.Center);
                     dialog.Show();
                     break;
+                case Resource.Id.menuModifier:
+                    var ModifierEnseignantActivity = new Intent(this, typeof(ModifierEnseignantActivity));
+                    ModifierEnseignantActivity.PutExtra("paramNomCegep", Intent.GetStringExtra("paramNomCegep"));
+                    ModifierEnseignantActivity.PutExtra("paramNomDepartement", Intent.GetStringExtra("paramNomDepartement"));
+                    ModifierEnseignantActivity.PutExtra("paramNoEmploye", Intent.GetIntExtra("paramNoEmploye", 0));
+                    StartActivity(ModifierEnseignantActivity);
+                    break;
                 case Resource.Id.menuRetour:
                     Finish();
                     break;
