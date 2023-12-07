@@ -66,11 +66,13 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapteurs\ListeCoursAdapteur.cs" />
     <Compile Include="Adapteurs\ListeEnseignantAdapteur.cs" />
     <Compile Include="Adapteurs\ListeDepartementAdapteur.cs" />
     <Compile Include="Adapteurs\ListeCegepAdapteur.cs" />
     <Compile Include="AfficherEnseignantActivity.cs" />
     <Compile Include="AfficherDepartementActivity.cs" />
+    <Compile Include="CreerCoursActivity.cs" />
     <Compile Include="CreerEnseignantActivity.cs" />
     <Compile Include="ModifierEnseignantActivity.cs" />
     <Compile Include="ModifierCegepActivity.cs" />
@@ -222,6 +224,24 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\menu\menu_modifierEnseignant.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\menu_creerCours.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\AjouterCours.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\listeCoursItems.xml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>

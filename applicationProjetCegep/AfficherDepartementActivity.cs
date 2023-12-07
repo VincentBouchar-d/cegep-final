@@ -119,6 +119,12 @@ namespace applicationProjetCegep
                     CreerEnseignantActivity.PutExtra("paramNomDepartement", departementDTO.Nom);
                     StartActivity(CreerEnseignantActivity);
                     break;
+                case Resource.Id.menuCreerCours:
+                    var CreerCoursActivity = new Intent(this, typeof(CreerCoursActivity));
+                    CreerCoursActivity.PutExtra("paramNomCegep", Intent.GetStringExtra("paramNomCegep"));
+                    CreerCoursActivity.PutExtra("paramNomDepartement", departementDTO.Nom);
+                    StartActivity(CreerCoursActivity);
+                    break;
                 case Resource.Id.menuQuitter:
                     FinishAffinity();
                     break;

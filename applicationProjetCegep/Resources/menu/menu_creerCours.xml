@@ -1,13 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--For all properties see: https://aka.ms/android-menu-resource-->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-	<item android:id="@+id/menuCreerEnseignant" android:title="Enseignant" />
-	<item android:id="@+id/menuCreerCours" android:title="Cours" />
-	<item android:id="@+id/menuModifier" android:title="Modifier" />
-	<item android:id="@+id/menuSupprimer" android:title="Supprimer" />
+
 	<item android:id="@+id/menuRetour" android:title="Retour" />
 	<item android:id="@+id/menuQuitter" android:title="Quitter" />
-
 </menu>
 
 <!-- Code to implement into Activity:
@@ -15,7 +11,7 @@
 Android.Widget.SearchView searchView;
 public override bool OnCreateOptionsMenu(IMenu menu)
 {
-  this.MenuInflater.Inflate(Resource.Menu.menu1, menu);
+  this.MenuInflater.Inflate(Resource.Menu.menu_modifierCegep, menu);
 
   var searchItem = menu.FindItem(Resource.Id.action_search);
 
