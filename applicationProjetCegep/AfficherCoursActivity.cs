@@ -103,21 +103,21 @@ namespace applicationProjetCegep
                     builder.SetPositiveButton("NON", (sender, args) => { Finish(); });
                     builder.SetNegativeButton("OUI", (sender, args) => {
 
-                        CegepControleur.Instance.SupprimerEnseignant(Intent.GetStringExtra("paramNomCegep"), Intent.GetStringExtra("paramNomDepartement"), Intent.GetIntExtra("paramNoEmploye", 0));
+                        CegepControleur.Instance.SupprimerCours(Intent.GetStringExtra("paramNomCegep"), Intent.GetStringExtra("paramNomDepartement"), Intent.GetStringExtra("paramNomCours"));
                         Finish();
                     });
                     AlertDialog dialog = builder.Create();
                     dialog.SetTitle("*** ATTENTION  ***");
-                    dialog.SetMessage("Voulez-vous VRAIMENT supprimer cet enseignant ? Cette action est irréversible.");
+                    dialog.SetMessage("Voulez-vous VRAIMENT supprimer ce cours? Cette action est irréversible.");
                     dialog.Window.SetGravity(GravityFlags.Center);
                     dialog.Show();
                     break;
                 case Resource.Id.menuModifier:
-                    var ModifierEnseignantActivity = new Intent(this, typeof(ModifierEnseignantActivity));
+                    /* var ModifierEnseignantActivity = new Intent(this, typeof(ModifierEnseignantActivity));
                     ModifierEnseignantActivity.PutExtra("paramNomCegep", Intent.GetStringExtra("paramNomCegep"));
                     ModifierEnseignantActivity.PutExtra("paramNomDepartement", Intent.GetStringExtra("paramNomDepartement"));
                     ModifierEnseignantActivity.PutExtra("paramNoEmploye", Intent.GetIntExtra("paramNoEmploye", 0));
-                    StartActivity(ModifierEnseignantActivity);
+                    StartActivity(ModifierEnseignantActivity); */
                     break;
                 case Resource.Id.menuRetour:
                     Finish();
