@@ -113,11 +113,11 @@ namespace applicationProjetCegep
                     dialog.Show();
                     break;
                 case Resource.Id.menuModifier:
-                    /* var ModifierEnseignantActivity = new Intent(this, typeof(ModifierEnseignantActivity));
-                    ModifierEnseignantActivity.PutExtra("paramNomCegep", Intent.GetStringExtra("paramNomCegep"));
-                    ModifierEnseignantActivity.PutExtra("paramNomDepartement", Intent.GetStringExtra("paramNomDepartement"));
-                    ModifierEnseignantActivity.PutExtra("paramNoEmploye", Intent.GetIntExtra("paramNoEmploye", 0));
-                    StartActivity(ModifierEnseignantActivity); */
+                    var ModifierCoursActivity = new Intent(this, typeof(ModifierCoursActivity));
+                    ModifierCoursActivity.PutExtra("paramNomCegep", Intent.GetStringExtra("paramNomCegep"));
+                    ModifierCoursActivity.PutExtra("paramNomDepartement", Intent.GetStringExtra("paramNomDepartement"));
+                    ModifierCoursActivity.PutExtra("paramNomCours", Intent.GetStringExtra("paramNomCours"));
+                    StartActivity(ModifierCoursActivity); 
                     break;
                 case Resource.Id.menuRetour:
                     Finish();

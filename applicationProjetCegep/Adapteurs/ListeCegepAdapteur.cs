@@ -14,16 +14,29 @@ namespace applicationProjetCegep.Adapteurs
 {
     public class ListeCegepAdapteur : BaseAdapter<CegepDTO>
     {
-
+        /// <summary>
+        /// Variable représentant l'activité
+        /// </summary>
         private Activity context;
 
+        /// <summary>
+        /// Liste de CégepDTO
+        /// </summary>
         private CegepDTO[] listeCegep;
-
+        /// <summary>
+        /// Fonciton qui donne les valeurs aux variables context et listeCegep
+        /// </summary>
+        /// <param name="uneActivity"></param>
+        /// <param name="uneListeCegepDTO"></param>
         public ListeCegepAdapteur(Activity uneActivity, CegepDTO[] uneListeCegepDTO)
         {
             context = uneActivity;
             listeCegep = uneListeCegepDTO;
-        }
+        }/// <summary>
+         /// Fonction qui retourne la position
+         /// </summary>
+         /// <param name="position"></param>
+         /// <returns></returns>
         public override CegepDTO this[int position] 
         {
             get
@@ -31,7 +44,9 @@ namespace applicationProjetCegep.Adapteurs
                 return listeCegep[position]; 
             }
         }
-
+        /// <summary>
+        /// Fonction qui retourne le nombre de cégeps dans la liste
+        /// </summary>
         public override int Count 
         {
             get
@@ -39,13 +54,17 @@ namespace applicationProjetCegep.Adapteurs
                 return listeCegep.Length;
             }
         }
-
+        /// <summary>
+        /// Fonction qui retourne la position de l'objet
+        /// </summary>
+        /// <param name="position"></param>
+        /// <returns></returns>
         public override long GetItemId(int position)
         {
             return position;
         }
         /// <summary>
-        /// 
+        /// Fonction qui détermine la vue dans un listeView
         /// </summary>
         /// <param name="position"></param>
         /// <param name="convertView"></param>

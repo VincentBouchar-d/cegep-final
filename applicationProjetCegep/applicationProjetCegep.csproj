@@ -75,6 +75,7 @@
     <Compile Include="AfficherDepartementActivity.cs" />
     <Compile Include="CreerCoursActivity.cs" />
     <Compile Include="CreerEnseignantActivity.cs" />
+    <Compile Include="ModifierCoursActivity.cs" />
     <Compile Include="ModifierEnseignantActivity.cs" />
     <Compile Include="ModifierCegepActivity.cs" />
     <Compile Include="AfficherCegepActivity.cs" />
@@ -255,6 +256,18 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\menu\menu_afficherCours.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\menu_modifierCours.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ModifierCours.xml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>
