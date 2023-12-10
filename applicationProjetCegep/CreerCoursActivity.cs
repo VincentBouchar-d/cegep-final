@@ -80,15 +80,15 @@ namespace applicationProjetCegep
 
             listeVueCours.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) =>
             {
-                /*int numeroCours = int.Parse(listeCours[e.Position].No);
+                string nomCours = listeCours[e.Position].Nom;
 
-                Intent activiteAfficher = new Intent(this, typeof(AfficherEnseignantActivity));
+                Intent activiteAfficherCours = new Intent(this, typeof(AfficherCoursActivity));
                 //On initialise les paramètres avant de lancer la nouvelle activité.
-                activiteAfficherEnseignant.PutExtra("paramNomCegep", Intent.GetStringExtra("paramNomCegep"));
-                activiteAfficherEnseignant.PutExtra("paramNomDepartement", Intent.GetStringExtra("paramNomDepartement"));
-                activiteAfficherEnseignant.PutExtra("paramNoEmploye", listeEnseignant[e.Position].NoEmploye);
+                activiteAfficherCours.PutExtra("paramNomCegep", Intent.GetStringExtra("paramNomCegep"));
+                activiteAfficherCours.PutExtra("paramNomDepartement", Intent.GetStringExtra("paramNomDepartement"));
+                activiteAfficherCours.PutExtra("paramNomCours", listeCours[e.Position].Nom);
                 //On démarre la nouvelle activité.
-                StartActivity(activiteAfficherEnseignant);*/
+                StartActivity(activiteAfficherCours);
             };
         }
 
