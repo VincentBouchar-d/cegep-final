@@ -17,21 +17,54 @@ namespace applicationProjetCegep
     [Activity(Label = "Modifier Enseignant")]
     public class ModifierEnseignantActivity : AppCompatActivity
     {
+        /// <summary>
+        /// Text view contenant le numéro de l'enseignant
+        /// </summary>
         private TextView lblNoEmploye;
+        /// <summary>
+        /// EditText contenant le nom de l'enseignant
+        /// </summary>
         private EditText edtNomEnseignant;
+        /// <summary>
+        /// EditText contenant le prénom de l'enseignant
+        /// </summary>
         private EditText edtPrenomEnseignant;
+        /// <summary>
+        /// EditText contenant l'adresse de l'enseignant
+        /// </summary>
         private EditText edtAdresseEnseignant;
+        /// <summary>
+        /// EditText contenant la ville de l'enseignant
+        /// </summary>
         private EditText edtVilleEnseignant;
+        /// <summary>
+        /// EditText contenant la province de l'enseignant
+        /// </summary>
         private EditText edtProvinceEnseignant;
+        /// <summary>
+        /// EditText contenant le code postal de l'enseignant
+        /// </summary>
         private EditText edtCodePostalEnseignant;
+        /// <summary>
+        /// EditText contenant le numéro de téléphone de l'enseignant
+        /// </summary>
         private EditText edtTelephoneEnseignant;
+        /// <summary>
+        /// EditText contenant le courriel de l'enseignant
+        /// </summary>
         private EditText edtCourrielEnseignant;
-
+        /// <summary>
+        /// Bouton permettant de modifier un enseignant
+        /// </summary>
         private Button btnModifierEnseignant;
-
+        /// <summary>
+        /// Objet contenant les information de l'enseignant
+        /// </summary>
         private EnseignantDTO enseignantDTO;
-        private EnseignantDTO enseignantModif;
-
+        /// <summary>
+        /// Fonction OnCreate qui s'exécute lorsque l'activité se lance
+        /// </summary>
+        /// <param name="savedInstanceState"></param>
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -51,7 +84,7 @@ namespace applicationProjetCegep
             btnModifierEnseignant = FindViewById<Button>(Resource.Id.btnModifierEnseignant);
             enseignantDTO = CegepControleur.Instance.ObtenirEnseignant(Intent.GetStringExtra("paramNomCegep"), Intent.GetStringExtra("paramNomDepartement"), Intent.GetIntExtra("paramNoEmploye", 0));
             
-            
+            // Bouton permettant de modifier un enseignant
             btnModifierEnseignant.Click += delegate
             {
                 CegepControleur.Instance.ModifierEnseignant(Intent.GetStringExtra("paramNomCegep"), Intent.GetStringExtra("paramNomDepartement"), new EnseignantDTO( int.Parse(lblNoEmploye.Text) , edtNomEnseignant.Text, edtPrenomEnseignant.Text, edtAdresseEnseignant.Text, edtVilleEnseignant.Text, edtProvinceEnseignant.Text, edtCodePostalEnseignant.Text, edtTelephoneEnseignant.Text, edtCourrielEnseignant.Text));
@@ -61,13 +94,17 @@ namespace applicationProjetCegep
         }
 
 
-
+        /// <summary>
+        /// Fonction OnResume qui s'exécute lorsque l'activité recommence
+        /// </summary>
         protected override void OnResume()
         {
             base.OnResume();
             RafraichirDonnees();
         }
-
+        /// <summary>
+        /// Fonction qui permet d'afficher les bonnes informations
+        /// </summary>
         private void RafraichirDonnees()
         {
             

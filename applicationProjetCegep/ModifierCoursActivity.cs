@@ -16,17 +16,32 @@ namespace applicationProjetCegep
 {
     [Activity(Label = "Modifier cours")]
     public class ModifierCoursActivity : AppCompatActivity
-    {
+    {   
+        /// <summary>
+        /// TextView contenant le nom du cours
+        /// </summary>
         private TextView lblNomCours;
+        /// <summary>
+        /// EditText contenant le numéro du cours
+        /// </summary>
         private EditText edtNoCours;
+        /// <summary>
+        /// EditText contenant la description du cours
+        /// </summary>
         private EditText edtDescriptionCours;
         
-
+        /// <summary>
+        /// Bouton qui permet de modifier le cours
+        /// </summary>
         private Button btnModifierCours;
-
+        /// <summary>
+        /// Objet contenant les informations du cours
+        /// </summary>
         private CoursDTO coursDTO;
-        private CoursDTO coursModif;
-
+        /// <summary>
+        /// Fonction OnCreate qui s'exécute lorsque l'activité se lance
+        /// </summary>
+        /// <param name="savedInstanceState"></param>
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -41,7 +56,7 @@ namespace applicationProjetCegep
             btnModifierCours = FindViewById<Button>(Resource.Id.btnModifierCours);
             coursDTO = CegepControleur.Instance.ObtenirCours(Intent.GetStringExtra("paramNomCegep"), Intent.GetStringExtra("paramNomDepartement"), Intent.GetStringExtra("paramNomCours"));
             
-            
+            // Bouton qui permet de modifier le cours
             btnModifierCours.Click += delegate
             {
                 CegepControleur.Instance.ModifierCours(Intent.GetStringExtra("paramNomCegep"), Intent.GetStringExtra("paramNomDepartement"), new CoursDTO(edtNoCours.Text, lblNomCours.Text,edtDescriptionCours.Text));
@@ -49,15 +64,18 @@ namespace applicationProjetCegep
 
             };
         }
-
-
-
+        
+        /// <summary>
+        /// Fonciton OnResume qui s'exécute lorsque l'activité recommence
+        /// </summary>
         protected override void OnResume()
         {
             base.OnResume();
             RafraichirDonnees();
         }
-
+        /// <summary>
+        /// Fonction qui permer d'afficher les bonnes informations dans les editText
+        /// </summary>
         private void RafraichirDonnees()
         {
             lblNomCours.Text = coursDTO.Nom;

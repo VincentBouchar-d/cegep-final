@@ -24,24 +24,38 @@ namespace applicationProjetCegep
     public class CreerCoursActivity : AppCompatActivity
     {
         /// <summary>
-        /// bouton pour ajouter un enseignant
+        /// bouton pour ajouter un Cours
         /// </summary>
         private Button btnAjouterCours;
         /// <summary>
-        /// Liste contenant les enseignantDTO
+        /// Liste contenant les CoursDTO
         /// </summary>
         private CoursDTO[] listeCours;
         /// <summary>
-        /// Adpateur pour la listeEnseignant
+        /// Adpateur pour la listeCours
         /// </summary>
         private ListeCoursAdapteur adapteurListeCours;
-
+        /// <summary>
+        /// ListView pour afficher la liste des cours
+        /// </summary>
         private ListView listeVueCours;
+        /// <summary>
+        /// Label contenant le numéro du cours
+        /// </summary>
         private EditText edtNoCours;
+        /// <summary>
+        /// Label contenant le nom du cours
+        /// </summary>
         private EditText edtNomCours;
+        /// <summary>
+        /// Label contenant la description du cours
+        /// </summary>
         private EditText edtDescriptionCours;
       
-
+        /// <summary>
+        /// Fonction OnCreate qui s'exécute lorsque l'activité se lance
+        /// </summary>
+        /// <param name="savedInstanceState"></param>
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -57,7 +71,7 @@ namespace applicationProjetCegep
             edtDescriptionCours = FindViewById<EditText>(Resource.Id.edtDescriptionCours);
             
 
-
+            // Bouton permettant d'ajouter un cours
             btnAjouterCours.Click += delegate
             {
                 if ((edtNomCours.Text.Length > 0) && (edtNoCours.Text.Length > 0) && (edtDescriptionCours.Text.Length > 0))
@@ -77,7 +91,7 @@ namespace applicationProjetCegep
                 else
                     DialoguesUtils.AfficherMessageOK(this, "Erreur", "Veuillez remplir tous les champs...");
             };
-
+            //Permet de lancer l'activité AfficherCoursActivity lorsque l'on clique sur un des cours du listView
             listeVueCours.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) =>
             {
                 string nomCours = listeCours[e.Position].Nom;
@@ -91,13 +105,17 @@ namespace applicationProjetCegep
                 StartActivity(activiteAfficherCours);
             };
         }
-
+        /// <summary>
+        /// Fonction OnResume qui s'exécute lorsque l'activité recommence après une pause
+        /// </summary>
         protected override void OnResume()
         {
             base.OnResume();
             RafraichirDonnees();
         }
-
+        /// <summary>
+        /// Fonction qui permet d'afficher les bonnes informations dans les labels
+        /// </summary>
         private void RafraichirDonnees()
         {
             listeCours = CegepControleur.Instance.ObtenirListeCours(Intent.GetStringExtra("paramNomCegep"), Intent.GetStringExtra("paramNomDepartement")).ToArray();

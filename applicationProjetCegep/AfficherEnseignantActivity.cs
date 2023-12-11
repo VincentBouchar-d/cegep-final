@@ -24,22 +24,54 @@ namespace applicationProjetCegep
     {
         
         
-
+        /// <summary>
+        /// Label contenant le numéro de l'enseignant
+        /// </summary>
         private TextView lblNoEnseignant;
+        /// <summary>
+        /// Label contenant le nom de l'enseignant
+        /// </summary>
         private TextView lblNomEnseignant;
+        /// <summary>
+        /// Label contenant le prénom de l'enseignant
+        /// </summary>
         private TextView lblPrenomEnseignant;
+        /// <summary>
+        /// Label contenant la ville de l'enseignant
+        /// </summary>
         private TextView lblVilleEnseignant;
+        /// <summary>
+        /// Label contenant le code postal de l'enseignant
+        /// </summary>
         private TextView lblCodePostalEnseignant;
+        /// <summary>
+        /// Label contenant l'adresse de l'enseignant
+        /// </summary>
         private TextView lblAdresseEnseignant;
+        /// <summary>
+        /// Label contenant la province de l'enseignant
+        /// </summary>
         private TextView lblProvinceEnseignant;
+        /// <summary>
+        /// Label contenant le numéro de téléphone de l'enseignant
+        /// </summary>
         private TextView lblTelephoneEnseignant;
+        /// <summary>
+        /// Label contenant l'adresse de l'enseignant
+        /// </summary>
         private TextView lblCourrielEnseignant;
+        /// <summary>
+        /// Objet contenant les informations de l'enseignant
+        /// </summary>
         private EnseignantDTO enseignantDTO;
 
         
         
         
-
+        /// <summary>
+        /// Fonction OnCreate qui s'exécute lorsque l'activité démarre
+        /// </summary>
+        /// <param name="savedInstanceState"></param>
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -67,13 +99,17 @@ namespace applicationProjetCegep
 
             RafraichirDonnees();
         }
-
+        /// <summary>
+        /// Fonction OnResume qui s'exécute lorsque l'activité sort d'une pause
+        /// </summary>
         protected override void OnResume()
         {
             base.OnResume();
             RafraichirDonnees();
         }
-
+        /// <summary>
+        /// Fonction qui permet d'afficher les bonnes informations dans les labels
+        /// </summary>
         private void RafraichirDonnees()
         {
             string nomCegep = Intent.GetStringExtra("paramNomCegep");

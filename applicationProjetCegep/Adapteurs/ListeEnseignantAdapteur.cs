@@ -14,16 +14,29 @@ namespace applicationProjetCegep.Adapteurs
 {
     public class ListeEnseignantAdapteur : BaseAdapter<EnseignantDTO>
     {
-
+        /// <summary>
+        /// Variable qui représente l'activité
+        /// </summary>
         private Activity context;
-
+        /// <summary>
+        /// Variable qui représente la liste des enseignants
+        /// </summary>
         private EnseignantDTO[] listeEnseignant;
-
+        /// <summary>
+        /// Fonction qui donne les valeurs aux varialbes context et listeEnseignant
+        /// </summary>
+        /// <param name="uneActivity"></param>
+        /// <param name="uneListeEnseignantDTO"></param>
         public ListeEnseignantAdapteur(Activity uneActivity, EnseignantDTO[] uneListeEnseignantDTO)
         {
             context = uneActivity;
             listeEnseignant = uneListeEnseignantDTO;
         }
+        /// <summary>
+        /// Fonction qui retourne l'enseugnant à la position donnée
+        /// </summary>
+        /// <param name="position"></param>
+        /// <returns></returns>
         public override EnseignantDTO this[int position]
         {
             get
@@ -31,7 +44,9 @@ namespace applicationProjetCegep.Adapteurs
                 return listeEnseignant[position];
             }
         }
-
+        /// <summary>
+        /// Fonction qui retourne le nombre d'enseignant dans la liste
+        /// </summary>
         public override int Count
         {
             get
@@ -39,13 +54,17 @@ namespace applicationProjetCegep.Adapteurs
                 return listeEnseignant.Length;
             }
         }
-
+        /// <summary>
+        /// fonction qui retourne la position
+        /// </summary>
+        /// <param name="position"></param>
+        /// <returns></returns>
         public override long GetItemId(int position)
         {
             return position;
         }
         /// <summary>
-        /// 
+        /// Fonction qui détermine l'affichage des enseignants dans un listView
         /// </summary>
         /// <param name="position"></param>
         /// <param name="convertView"></param>

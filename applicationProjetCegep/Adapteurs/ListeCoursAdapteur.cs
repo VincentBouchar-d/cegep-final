@@ -32,7 +32,11 @@ namespace applicationProjetCegep.Adapteurs
             context = uneActivity;
             listeCours = uneListeCoursDTO;
         }
-
+        /// <summary>
+        /// Fonction qui retourne le cours à la position donnée
+        /// </summary>
+        /// <param name="position"></param>
+        /// <returns></returns>
         public override CoursDTO this[int position]
         {
             get
@@ -40,7 +44,9 @@ namespace applicationProjetCegep.Adapteurs
                 return listeCours[position];
             }
         }
-
+        /// <summary>
+        /// Fonction qui retourne le nombre de cours dans la liste
+        /// </summary>
         public override int Count
         {
             get
@@ -48,13 +54,17 @@ namespace applicationProjetCegep.Adapteurs
                 return listeCours.Length;
             }
         }
-
+        /// <summary>
+        /// Fonction qui retourne la position
+        /// </summary>
+        /// <param name="position"></param>
+        /// <returns></returns>
         public override long GetItemId(int position)
         {
             return position;
         }
         /// <summary>
-        /// 
+        /// Fonciton qui détermine l'affichage dans un listView
         /// </summary>
         /// <param name="position"></param>
         /// <param name="convertView"></param>

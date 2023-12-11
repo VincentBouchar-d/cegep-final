@@ -29,16 +29,42 @@ namespace applicationProjetCegep
         /// Adpateur pour la listeCegep
         /// </summary>
         private ListeCegepAdapteur adapteurListeCegep;
-
+        /// <summary>
+        /// ListView contenant une liste des cégeps
+        /// </summary>
         private ListView listeVueCegep;
+        /// <summary>
+        /// Label contenant le nom du cégep
+        /// </summary>
         private EditText edtNomCegep;
+        /// <summary>
+        /// Label contenant l'adresse du cégep
+        /// </summary>
         private EditText edtAdresseCegep;
+        /// <summary>
+        /// Label contenant la ville du cégep
+        /// </summary>
         private EditText edtVilleCegep;
+        /// <summary>
+        /// Label contenant la province du cégep
+        /// </summary>
         private EditText edtProvinceCegep;
+        /// <summary>
+        /// Label contenant le code postal du cégep
+        /// </summary>
         private EditText edtCodePostalCegep;
+        /// <summary>
+        /// Label contenant le numéro de téléphone du cégep
+        /// </summary>
         private EditText edtTelephoneCegep;
+        /// <summary>
+        /// Label contenant le courriel du cégep
+        /// </summary>
         private EditText edtCourrielCegep;
-
+        /// <summary>
+        /// Finction OnCreate qui s'exécute lorsque l'activité se lance
+        /// </summary>
+        /// <param name="savedInstanceState"></param>
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -58,7 +84,7 @@ namespace applicationProjetCegep
             edtCourrielCegep = FindViewById<EditText>(Resource.Id.edtCourrielCegep);
 
 
-
+            // bouton qui permet de créer un cégep
             btnAjouterCegep.Click += delegate
             {
                 if ((edtAdresseCegep.Text.Length > 0) && (edtVilleCegep.Text.Length > 0) && (edtProvinceCegep.Text.Length > 0) && (edtCodePostalCegep.Text.Length > 0) && (edtTelephoneCegep.Text.Length > 0) && (edtCourrielCegep.Text.Length > 0))
@@ -78,7 +104,7 @@ namespace applicationProjetCegep
                 else
                     DialoguesUtils.AfficherMessageOK(this, "Erreur", "Veuillez remplir tous les champs...");
             };
-
+            // Permet de lancer l'activité AfficherCegepActivity lorsque l'on clique sur un des cégeps dans le listView
             listeVueCegep.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) =>
             {
                 Intent activiteCegepDetails = new Intent(this, typeof(AfficherCegepActivity));
@@ -88,13 +114,17 @@ namespace applicationProjetCegep
                 StartActivity(activiteCegepDetails);
             };
         }
-
+        /// <summary>
+        /// Fonction OnResume qui s'exécute lorsque l'activité recommence
+        /// </summary>
         protected override void OnResume()
         {
             base.OnResume();
             RafraichirDonnees();
         }
-
+        /// <summary>
+        /// Fonction qui permet d'afficher les bonnes informations dans les labels
+        /// </summary>
         private void RafraichirDonnees()
         {
             listeCegep = CegepControleur.Instance.ObtenirListeCegep().ToArray();

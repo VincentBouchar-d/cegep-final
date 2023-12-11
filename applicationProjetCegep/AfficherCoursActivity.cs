@@ -23,16 +23,30 @@ namespace applicationProjetCegep
     public class AfficherCoursActivity : AppCompatActivity
     {
         
-        
+        /// <summary>
+        /// Objet représentant un cours
+        /// </summary>
         CoursDTO  coursDTO;
+        /// <summary>
+        /// Label contenenant le numéro du cours
+        /// </summary>
         private TextView lblNoCours;
+        /// <summary>
+        /// Label contenenant le nom du cours
+        /// </summary>
         private TextView lblNomCours;
+        /// <summary>
+        /// Label contenenant la description du cours
+        /// </summary>
         private TextView lblDescriptionCours;
         
         
         
         
-
+        /// <summary>
+        /// Fonction OnCreate qui s'exécute au lancement de l'activité
+        /// </summary>
+        /// <param name="savedInstanceState"></param>
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -51,13 +65,17 @@ namespace applicationProjetCegep
 
             RafraichirDonnees();
         }
-
+        /// <summary>
+        /// Fonction qui s'exécute lorsque l'activité recommence
+        /// </summary>
         protected override void OnResume()
         {
             base.OnResume();
             RafraichirDonnees();
         }
-
+        /// <summary>
+        /// Fonction qui permet d'ac=fficher les bonnes informations dans les labels
+        /// </summary>
         private void RafraichirDonnees()
         {
             string nomCegep = Intent.GetStringExtra("paramNomCegep");

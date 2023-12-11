@@ -35,19 +35,52 @@ namespace applicationProjetCegep
         /// Adpateur pour la listeEnseignant
         /// </summary>
         private ListeEnseignantAdapteur adapteurListeEnseignant;
-
+        /// <summary>
+        /// Listeview contenant une liste des enseignants du programme
+        /// </summary>
         private ListView listeVueEnseignant;
+
+        /// <summary>
+        /// EditText contentant le numéro de l'enseignant
+        /// </summary>
         private EditText edtNoEnseignant;
+        /// <summary>
+        /// EditText contentant le nom de l'enseignant
+        /// </summary>
         private EditText edtNomEnseignant;
+        /// <summary>
+        /// EditText contentant le prénom de l'enseignant
+        /// </summary>
         private EditText edtPrenomEnseignant;
+        /// <summary>
+        /// EditText contentant l'adresse de l'enseignant
+        /// </summary>
         private EditText edtAdresseEnseignant;
+        /// <summary>
+        /// EditText contentant la ville de l'enseignant
+        /// </summary>
         private EditText edtVilleEnseignant;
+        /// <summary>
+        /// EditText contentant la province de l'enseignant
+        /// </summary>
         private EditText edtProvinceEnseignant;
+        /// <summary>
+        /// EditText contentant le code postal de l'enseignant
+        /// </summary>
         private EditText edtCodePostalEnseignant;
+        /// <summary>
+        /// EditText contentant le numéro de téléphone de l'enseignant
+        /// </summary>
         private EditText edtTelephoneEnseignant;
+        /// <summary>
+        /// EditText contentant le courriel de l'enseignant
+        /// </summary>
         private EditText edtCourrielEnseignant;
 
-
+        /// <summary>
+        /// Fonciton OnCreate qui s'exécute lors du lancement de l'activité
+        /// </summary>
+        /// <param name="savedInstanceState"></param>
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -69,7 +102,7 @@ namespace applicationProjetCegep
             edtCourrielEnseignant = FindViewById<EditText>(Resource.Id.edtCourrielEnseignant);
 
 
-
+            // Bouton permettant d'ajouter un enseignant
             btnAjouterEnseignant.Click += delegate
             {
                 if ((edtAdresseEnseignant.Text.Length > 0) && (edtVilleEnseignant.Text.Length > 0) && (edtProvinceEnseignant.Text.Length > 0) && (edtCodePostalEnseignant.Text.Length > 0) && (edtTelephoneEnseignant.Text.Length > 0) && (edtCourrielEnseignant.Text.Length > 0) && (edtNoEnseignant.Text.Length > 0) && (edtPrenomEnseignant.Text.Length > 0))
@@ -89,7 +122,7 @@ namespace applicationProjetCegep
                 else
                     DialoguesUtils.AfficherMessageOK(this, "Erreur", "Veuillez remplir tous les champs...");
             };
-
+            // Permet de lancer l'activité AfficherEnseignantActivity lorsqu'un enseignant est cliqué dans le listView
             listeVueEnseignant.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) =>
             {
                 int numeroEmploye = listeEnseignant[e.Position].NoEmploye;
@@ -103,13 +136,17 @@ namespace applicationProjetCegep
                 StartActivity(activiteAfficherEnseignant);
             };
         }
-
+        /// <summary>
+        /// Fonciton OnResume qui s'exécute lorsque l'application recommence
+        /// </summary>
         protected override void OnResume()
         {
             base.OnResume();
             RafraichirDonnees();
         }
-
+        /// <summary>
+        /// Fonction qui permet d'afficher les bonnes informations dans les labels
+        /// </summary>
         private void RafraichirDonnees()
         {
             listeEnseignant = CegepControleur.Instance.ObtenirListeEnseignant(Intent.GetStringExtra("paramNomCegep"), Intent.GetStringExtra("paramNomDepartement")).ToArray();

@@ -35,23 +35,60 @@ namespace applicationProjetCegep
         /// Listview contenant les noms des cegeps
         /// </summary>
         private ListView listView;
-
+        /// <summary>
+        /// Label du nom du cegep
+        /// </summary>
         private TextView lblNomCegep;
+        /// <summary>
+        /// Label de l'adresse du cegep
+        /// </summary>
         private TextView lblAdresseCegep;
+        /// <summary>
+        /// Label de la ville du cegep
+        /// </summary>
         private TextView lblVilleCegep;
+        /// <summary>
+        /// Label de la province du cegep
+        /// </summary>
         private TextView lblProvinceCegep;
+        /// <summary>
+        /// Label du code postal du cegep
+        /// </summary>
         private TextView lblCodePostalCegep;
+        /// <summary>
+        /// Label du telephone du cegep
+        /// </summary>
         private TextView lblTelephoneCegep;
+        /// <summary>
+        /// Label du courriel du cegep
+        /// </summary>
         private TextView lblCourrielCegep;
+        /// <summary>
+        /// Objet contenant les informations du cegep
+        /// </summary>
         private CegepDTO cegepDTO;
 
         
-        
+        /// <summary>
+        /// Champ d'édition contenant le nom du département à creer
+        /// </summary>
         private EditText edtNomDepartement;
+        /// <summary>
+        /// Champ d'édition contenant le numéro du departement à créer
+        /// </summary>
         private EditText edtNumeroDepartement;
+        /// <summary>
+        /// Champ d'édition contenant la description du département à créer
+        /// </summary>
         private EditText edtDescriptionDepartement;
+        /// <summary>
+        /// Bouton pour créer le département
+        /// </summary>
         private Button   btnAjouterDepartement;
-
+        /// <summary>
+        /// Fonction OnCreate qui se lance lors du début de l'activité
+        /// </summary>
+        /// <param name="savedInstanceState"></param>
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -59,7 +96,7 @@ namespace applicationProjetCegep
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.AfficherCegep);
 
-
+            // Liens entre les variables et les objets dans le layout
             listView = FindViewById<ListView>(Resource.Id.listViewAfficher);
             lblNomCegep = FindViewById<TextView>(Resource.Id.lblNomCegep);
             lblAdresseCegep = FindViewById<TextView>(Resource.Id.lblAdresseCegep);
@@ -75,7 +112,7 @@ namespace applicationProjetCegep
             edtDescriptionDepartement= FindViewById<EditText>(Resource.Id.edtDescriptionDepartement);
             btnAjouterDepartement = FindViewById<Button>(Resource.Id.btnAjouterDepartement);
 
-
+            // Bouton permettant d'ajouter un département
             btnAjouterDepartement.Click += delegate
             {
                 if ((edtDescriptionDepartement.Text.Length > 0) && (edtNumeroDepartement.Text.Length > 0) && (edtNomDepartement.Text.Length > 0))
@@ -95,7 +132,7 @@ namespace applicationProjetCegep
                 else
                     DialoguesUtils.AfficherMessageOK(this, "Erreur", "Veuillez remplir tous les champs...");
             };
-
+            // Permet de lancer l'activité AfficherDepartementActivity pour le département du listView cliqué.
             listView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) =>
             {
                 Intent activiteDepartementDetails = new Intent(this, typeof(AfficherDepartementActivity));
@@ -106,13 +143,17 @@ namespace applicationProjetCegep
                 StartActivity(activiteDepartementDetails);
             };
         }
-
+        /// <summary>
+        /// Fonction lancée lorsque l'activité recommence
+        /// </summary>
         protected override void OnResume()
         {
             base.OnResume();
             RafraichirDonnees();
         }
-
+        /// <summary>
+        /// fonction qui permet d'afficher les bonnes informations dans les labels
+        /// </summary>
         private void RafraichirDonnees()
         {
             listeDepartement = CegepControleur.Instance.ObtenirListeDepartement(Intent.GetStringExtra("paramNomCegep")).ToArray();

@@ -24,16 +24,30 @@ namespace applicationProjetCegep
     {
         
         
-
+        /// <summary>
+        /// Label contenant le nom du département
+        /// </summary>
         private TextView lblNomDepartement;
+        /// <summary>
+        /// Label contenant le numéro du département
+        /// </summary>
         private TextView lblNumeroDepartement;
+        /// <summary>
+        /// Label contenant la description du département
+        /// </summary>
         private TextView lblDescriptionDepartement;
+        /// <summary>
+        /// Objet contenant les informations du département
+        /// </summary>
         private DepartementDTO departementDTO;
 
         
         
         
-
+        /// <summary>
+        /// Fonction OnCreate qui s'exécute lors du lancement de l'activité
+        /// </summary>
+        /// <param name="savedInstanceState"></param>
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -54,13 +68,17 @@ namespace applicationProjetCegep
 
             RafraichirDonnees();
         }
-
+        /// <summary>
+        /// Fonction OnResume qui s'exécute lorsque l'activité recommence
+        /// </summary>
         protected override void OnResume()
         {
             base.OnResume();
             RafraichirDonnees();
         }
-
+        /// <summary>
+        /// Fonction qui permet d'afficher les bonnes informations dans les labels
+        /// </summary>
         private void RafraichirDonnees()
         {
             

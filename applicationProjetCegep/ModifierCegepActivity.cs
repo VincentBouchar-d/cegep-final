@@ -17,19 +17,49 @@ namespace applicationProjetCegep
     [Activity(Label = "Activity1")]
     public class ModifierCegepActivity : AppCompatActivity
     {
+        /// <summary>
+        /// Label contenant le nom du cégep
+        /// </summary>
         private TextView lblNomCegep;
+
+        /// <summary>
+        /// EditText contenant l'adresse du cégep
+        /// </summary>
         private EditText edtAdresseCegep;
+        /// <summary>
+        /// EditText contenant la ville du cégep
+        /// </summary>
         private EditText edtVilleCegep;
+        /// <summary>
+        /// EditText contenant la province du cégep
+        /// </summary>
         private EditText edtProvinceCegep;
+        /// <summary>
+        /// EditText contenant le code postal du cégep
+        /// </summary>
         private EditText edtCodePostalCegep;
+        /// <summary>
+        /// EditText contenant le numéro de téléphone du cégep
+        /// </summary>
         private EditText edtTelephoneCegep;
+        /// <summary>
+        /// EditText contenant le courriel du cégep
+        /// </summary>
         private EditText edtCourrielCegep;
 
+        /// <summary>
+        /// Bouton pour créer un Cegep
+        /// </summary>
         private Button btnModifierCegep;
-
+        /// <summary>
+        /// Objet contenant les informations du Cegep
+        /// </summary>
         private CegepDTO cegepDTO;
-        private CegepDTO cegepModif;
 
+        /// <summary>
+        /// Fonction OnCreate qui s'exécute lorsque l'activité se lance
+        /// </summary>
+        /// <param name="savedInstanceState"></param>
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -47,7 +77,7 @@ namespace applicationProjetCegep
             btnModifierCegep = FindViewById<Button>(Resource.Id.btnModifierCegep);
             cegepDTO = CegepControleur.Instance.ObtenirCegep(Intent.GetStringExtra("paramNomCegep"));
             
-            
+            // bouton qui permet de modifier un Cegep
             btnModifierCegep.Click += delegate
             {
                 CegepControleur.Instance.ModifierCegep(new CegepDTO(lblNomCegep.Text, edtAdresseCegep.Text, edtVilleCegep.Text, edtProvinceCegep.Text, edtCodePostalCegep.Text, edtTelephoneCegep.Text, edtCourrielCegep.Text));
@@ -57,13 +87,17 @@ namespace applicationProjetCegep
         }
 
 
-
+        /// <summary>
+        /// Fonction OnResume qui s'exécute lorsque l'activité recommence
+        /// </summary>
         protected override void OnResume()
         {
             base.OnResume();
             RafraichirDonnees();
         }
-
+        /// <summary>
+        /// Fonction qui permet d'afficher les bonnes informations dans les EditTexts
+        /// </summary>
         private void RafraichirDonnees()
         {
             
