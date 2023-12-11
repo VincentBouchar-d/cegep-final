@@ -117,8 +117,15 @@ namespace applicationProjetCegep
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.SetPositiveButton("NON", (sender, args) => { Finish(); });
                     builder.SetNegativeButton("OUI", (sender, args) => {
-                        
-                            CegepControleur.Instance.SupprimerDepartement(Intent.GetStringExtra("paramNomCegep"), departementDTO.Nom);
+                        foreach (EnseignantDTO enseignantDTO in CegepControleur.Instance.ObtenirListeEnseignant(Intent.GetStringExtra("paramNomCegep"), departementDTO.Nom))
+                        {
+                            CegepControleur.Instance.SupprimerEnseignant(Intent.GetStringExtra("paramNomCegep"), departementDTO.Nom, enseignantDTO.NoEmploye);
+                        }
+                        foreach (CoursDTO coursDTO in CegepControleur.Instance.ObtenirListeCours(Intent.GetStringExtra("paramNomCegep"), departementDTO.Nom))
+                        {
+                            CegepControleur.Instance.SupprimerCours(Intent.GetStringExtra("paramNomCegep"), departementDTO.Nom, coursDTO.Nom);
+                        }
+                        CegepControleur.Instance.SupprimerDepartement(Intent.GetStringExtra("paramNomCegep"), departementDTO.Nom);
                             Finish();
                     });
                     AlertDialog dialog = builder.Create();

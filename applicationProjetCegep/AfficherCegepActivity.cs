@@ -204,6 +204,14 @@ namespace applicationProjetCegep
                     builder.SetNegativeButton("OUI", (sender, args) => {
                         foreach (DepartementDTO departementDTO in CegepControleur.Instance.ObtenirListeDepartement(Intent.GetStringExtra("paramNomCegep")))
                         {
+                            foreach (EnseignantDTO enseignantDTO in CegepControleur.Instance.ObtenirListeEnseignant(Intent.GetStringExtra("paramNomCegep"), departementDTO.Nom)) 
+                            {
+                                CegepControleur.Instance.SupprimerEnseignant(Intent.GetStringExtra("paramNomCegep"), departementDTO.Nom, enseignantDTO.NoEmploye);
+                            }
+                            foreach (CoursDTO coursDTO in CegepControleur.Instance.ObtenirListeCours(Intent.GetStringExtra("paramNomCegep"), departementDTO.Nom))
+                            {
+                                CegepControleur.Instance.SupprimerCours(Intent.GetStringExtra("paramNomCegep"), departementDTO.Nom, coursDTO.Nom);
+                            }
                             CegepControleur.Instance.SupprimerDepartement(Intent.GetStringExtra("paramNomCegep"), departementDTO.Nom);
                         }
                         CegepControleur.Instance.SupprimerCegep(Intent.GetStringExtra("paramNomCegep"));
