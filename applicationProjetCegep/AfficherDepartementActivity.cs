@@ -1,21 +1,12 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using AndroidX.AppCompat.App;
 using Android.Widget;
-using Javax.Security.Auth;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using static Android.Service.Voice.VoiceInteractionSession;
 using AlertDialog = AndroidX.AppCompat.App.AlertDialog;
-using applicationProjetCegep.Adapteurs;
 using ProjetCegep.Controleurs;
 using ProjetCegep.DTOs;
-using ProjetCegep.Utils;
 
 namespace applicationProjetCegep
 {
@@ -135,6 +126,12 @@ namespace applicationProjetCegep
                     dialog.Show();
                     
                     break;
+                case Resource.Id.menuModifier:
+                    var ModifierDepartementActivity = new Intent(this, typeof(ModifierDepartementActivity));
+                    ModifierDepartementActivity.PutExtra("paramNomCegep", Intent.GetStringExtra("paramNomCegep"));
+                    ModifierDepartementActivity.PutExtra("paramNomDepartement", departementDTO.Nom);
+                    StartActivity(ModifierDepartementActivity);
+                    break;  
                 case Resource.Id.menuRetour:
                     Finish();
                     break;

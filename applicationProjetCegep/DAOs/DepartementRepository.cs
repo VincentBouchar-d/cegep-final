@@ -4,6 +4,7 @@ using System.Data;
 using System.Collections.Generic;
 using ProjetCegep.DTOs;
 using ProjetCegep.Exceptions;
+using ProjetCegep.DAOs;
 
 /// <summary>
 /// Namespace pour les classe de type DAO.
@@ -238,14 +239,17 @@ namespace ProjetCegep.DAOs
                                    " WHERE Nom = @nom " +
                                    "   AND idCegep = @idCegep ";
 
+            SqlParameter nomParam = new SqlParameter("@nom", SqlDbType.VarChar, 50);
             SqlParameter noParam = new SqlParameter("@no", SqlDbType.VarChar, 10);
             SqlParameter descriptionParam = new SqlParameter("@description", SqlDbType.VarChar, 100);
             SqlParameter idCegepParam = new SqlParameter("@idCegep", SqlDbType.Int);
-
+            
+            nomParam.Value = departementDTO.Nom;
             noParam.Value = departementDTO.No;
             descriptionParam.Value = departementDTO.Description;
             idCegepParam.Value = CegepRepository.Instance.ObtenirIdCegep(nomCegep);
 
+            command.Parameters.Add(nomParam);   
             command.Parameters.Add(noParam);
             command.Parameters.Add(descriptionParam);
             command.Parameters.Add(idCegepParam);
@@ -258,7 +262,7 @@ namespace ProjetCegep.DAOs
             }
             catch (Exception ex)
             {
-                throw new Exception("Erreur lors de la modification d'un département...", ex);
+                 throw new Exception("Erreur lors de la modification d'un département...", ex);
             }
             finally
             {
@@ -284,6 +288,41 @@ namespace ProjetCegep.DAOs
             idParam.Value = ObtenirIdDepartement(nomCegep, departementDTO.Nom);
 
             command.Parameters.Add(idParam);
+
+            try
+            {
+                OuvrirConnexion();
+                command.Prepare();
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erreur lors de la supression d'un département...", ex);
+            }
+            finally
+            {
+                FermerConnexion();
+            }
+        }
+
+
+        /// <summary>
+        /// Méthode de service permettant de vider les départements.
+        /// </summary>
+        /// <param name="nomCegep">Le nom du Cégep.</param>
+        public void ViderDepartement(string nomCegep)
+        {
+            SqlCommand command = new SqlCommand(null, connexion);
+
+            command.CommandText = " DELETE " +
+                                   " FROM Departements " +
+                                   " WHERE IdCegep = @idCegep ";
+
+            SqlParameter idCegepParam = new SqlParameter("@idCegep", SqlDbType.Int);
+
+            idCegepParam.Value = CegepRepository.Instance.ObtenirIdCegep(nomCegep);
+
+            command.Parameters.Add(idCegepParam);
 
             try
             {

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "applicationProjetCegep", "applicationProjetCegep\applicationProjetCegep.csproj", "{4457CFA9-FFB0-4C71-8AEE-A8107FC74E38}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViderDepartementsTestProject", "ViderDepartementsTestProject\ViderDepartementsTestProject.csproj", "{F971977A-5806-428D-8F9C-9EF5E936154E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{4457CFA9-FFB0-4C71-8AEE-A8107FC74E38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4457CFA9-FFB0-4C71-8AEE-A8107FC74E38}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4457CFA9-FFB0-4C71-8AEE-A8107FC74E38}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F971977A-5806-428D-8F9C-9EF5E936154E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F971977A-5806-428D-8F9C-9EF5E936154E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F971977A-5806-428D-8F9C-9EF5E936154E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F971977A-5806-428D-8F9C-9EF5E936154E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

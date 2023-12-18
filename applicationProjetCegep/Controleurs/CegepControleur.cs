@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ProjetCegep.Modeles;
 using ProjetCegep.DTOs;
 using ProjetCegep.DAOs;
+using ProjetCegep.Utils;
 
 /// <summary>
 /// Namespace pour les classes de type Controleur.
@@ -163,6 +164,12 @@ namespace ProjetCegep.Controleurs
                 throw new Exception("Erreur lors du chargement des départements, problème avec l'intégrité des données de la base de données.");
         }
 
+        public void ViderCegeps()
+        {
+            CegepRepository.Instance.ViderCegep();
+        }   
+
+
         /// <summary>
         /// Méthode de service permettant d'obtenir un département.
         /// </summary>
@@ -199,6 +206,22 @@ namespace ProjetCegep.Controleurs
         }
 
         /// <summary>
+        /// Méthode de service permettant de modifier un departement.
+        /// </summary>
+        /// <param name="departement">Le DTO du département de l'enseignant.</param>
+        /// <param name="cours">Le DTO du cours a modifier.</param>
+        public void ModifierDepartement(string nomCegep, string nomDepartement, DepartementDTO newDepartement)
+        {
+            DepartementDTO departementDTO = ObtenirDepartement(nomCegep, nomDepartement);
+            Departement departementModele = new Departement(departementDTO.No, departementDTO.Nom, departementDTO.Description);
+
+            if (newDepartement.No != departementModele.No || newDepartement.Description != departementModele.Description)
+                DepartementRepository.Instance.ModifierDepartement(nomCegep, newDepartement);
+            else
+                throw new Exception("Erreur - Veuillez modifier au moins une valeur.");
+        }
+
+        /// <summary>
         /// Méthode de service permettant de supprimer un département.
         /// </summary>
         /// <param name="nomCegep">Le nom du Cégep.</param> 
@@ -218,6 +241,11 @@ namespace ProjetCegep.Controleurs
 
             DepartementRepository.Instance.SupprimerDepartement(nomCegep, new DepartementDTO(new Departement(unNom: nomDepartement)));
         }
+
+        public void ViderDepartement(string nomCegep)
+        {
+            DepartementRepository.Instance.ViderDepartement(nomCegep);
+        } 
 
         #endregion MethodesDepartement
 
@@ -439,6 +467,16 @@ namespace ProjetCegep.Controleurs
             departementModele.EnleverCours(coursModele);
 
             CoursRepository.Instance.SupprimerCours(nomCegep, departementDTO.Nom, coursDTO);
+        }
+
+        public void ViderCours(string nomCegep, string nomDepartement)
+        {
+            CoursRepository.Instance.ViderCours(nomCegep, nomDepartement);   
+        }
+
+        public void ViderEnseignant(string nomCegep, string nomDepartement)
+        {
+            EnseignantRepository.Instance.ViderEnseignant(nomCegep, nomDepartement);
         }
 
         #endregion MethodesCours

@@ -148,6 +148,10 @@ namespace applicationProjetCegep
                 case Resource.Id.menuQuitter:
                     FinishAffinity();
                     break;
+                case Resource.Id.menuVider:
+                    CegepControleur.Instance.ViderCours(Intent.GetStringExtra("paramNomCegep"),Intent.GetStringExtra("paramNomDepartement"));
+                    RafraichirDonnees();
+                    break;
             }
             return base.OnOptionsItemSelected(item);
         }

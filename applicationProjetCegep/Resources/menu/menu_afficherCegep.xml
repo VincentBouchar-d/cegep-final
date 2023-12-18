@@ -4,6 +4,7 @@
 
 	<item android:id="@+id/menuModifier" android:title="Modifier" />
 	<item android:id="@+id/menuSupprimer" android:title="Supprimer" />
+	<item android:id="@+id/menuVider" android:title="Vider les départements" />
 	<item android:id="@+id/menuRetour" android:title="Retour" />
 	<item android:id="@+id/menuQuitter" android:title="Quitter" />
 

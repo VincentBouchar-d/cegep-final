@@ -4,6 +4,7 @@
 	<item android:id="@+id/menuCreerEnseignant" android:title="Enseignant" />
 	<item android:id="@+id/menuCreerCours" android:title="Cours" />
 	<item android:id="@+id/menuSupprimer" android:title="Supprimer" />
+	<item android:id="@+id/menuModifier" android:title="Modifier" />
 	<item android:id="@+id/menuRetour" android:title="Retour" />
 	<item android:id="@+id/menuQuitter" android:title="Quitter" />
 

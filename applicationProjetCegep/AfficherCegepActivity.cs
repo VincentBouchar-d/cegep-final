@@ -16,6 +16,7 @@ using applicationProjetCegep.Adapteurs;
 using ProjetCegep.Controleurs;
 using ProjetCegep.DTOs;
 using ProjetCegep.Utils;
+using ProjetCegep.Modeles;
 
 namespace applicationProjetCegep
 {
@@ -229,6 +230,12 @@ namespace applicationProjetCegep
                     break;
                 case Resource.Id.menuQuitter:
                     FinishAffinity();
+                    break;
+                case Resource.Id.menuVider:
+
+                    CegepControleur.Instance.ViderDepartement(Intent.GetStringExtra("paramNomCegep"));
+                    
+                    RafraichirDonnees();
                     break;
             }
             return base.OnOptionsItemSelected(item);

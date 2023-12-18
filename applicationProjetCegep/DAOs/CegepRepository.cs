@@ -314,6 +314,42 @@ namespace ProjetCegep.DAOs
             }
         }
 
+        /// <summary>
+        /// Méthode de service permettant de vider les Cégeps.
+        /// </summary>
+        public void ViderCegep()
+        {
+            SqlCommand command = new SqlCommand(null, connexion);
+
+            command.CommandText = " DELETE " +
+                                  " FROM Cegeps ";
+
+            try
+            {
+                OuvrirConnexion();
+                command.Prepare();
+                command.ExecuteNonQuery();
+            }
+            catch (SqlException e)
+            {
+                if (e.Number == 547)
+                {
+                    throw new DBRelationException("Impossible de supprimer le Cégep. Départements associés.", e);
+                }
+                else throw e;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erreur lors de la supression d'un Cégep...", ex);
+            }
+
+            finally
+            {
+                FermerConnexion();
+            }
+        }
+
+
         #endregion
     }
 }

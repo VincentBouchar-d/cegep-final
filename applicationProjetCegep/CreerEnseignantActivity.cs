@@ -179,6 +179,13 @@ namespace applicationProjetCegep
                 case Resource.Id.menuQuitter:
                     FinishAffinity();
                     break;
+                case Resource.Id.menuVider:
+                    foreach (EnseignantDTO enseignant in listeEnseignant)
+                    {
+                        CegepControleur.Instance.SupprimerEnseignant(Intent.GetStringExtra("paramNomCegep"), Intent.GetStringExtra("paramNomDepartement"), enseignant.NoEmploye);
+                    }
+                    RafraichirDonnees();
+                    break;
             }
             return base.OnOptionsItemSelected(item);
         }

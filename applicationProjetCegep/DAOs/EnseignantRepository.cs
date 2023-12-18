@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Collections.Generic;
 using ProjetCegep.DTOs;
+
 using ProjetCegep.Exceptions;
 
 /// <summary>
@@ -351,6 +352,37 @@ namespace ProjetCegep.DAOs
                 FermerConnexion();
             }
         }
+
+        public void ViderEnseignant(string nomCegep, string nomDepartement)
+        {
+            SqlCommand command = new SqlCommand(null, connexion);
+
+            command.CommandText = " DELETE " +
+                                    " FROM Enseignants " +
+                                   " WHERE IdDepartement = @idDepartement ";
+
+            SqlParameter idDepartementParam = new SqlParameter("@idDepartement", SqlDbType.Int);
+
+            idDepartementParam.Value = DepartementRepository.Instance.ObtenirIdDepartement(nomCegep, nomDepartement);
+
+            command.Parameters.Add(idDepartementParam);
+
+            try
+            {
+                OuvrirConnexion();
+                command.Prepare();
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erreur lors de la supression d'un enseignant...", ex);
+            }
+            finally
+            {
+                FermerConnexion();
+            }
+        }
+
 
         #endregion
     }

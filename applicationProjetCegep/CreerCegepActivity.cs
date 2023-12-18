@@ -154,6 +154,10 @@ namespace applicationProjetCegep
                 case Resource.Id.Quitter:
                     Finish();
                     break;
+                case Resource.Id.menuVider:
+                    CegepControleur.Instance.ViderCegeps();
+                    RafraichirDonnees();
+                    break;
             }
             return base.OnOptionsItemSelected(item);
         }
